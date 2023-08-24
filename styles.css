@@ -1,0 +1,77 @@
+ /* CSS variable for button background color */
+ :root {
+  --button-bg-color: #007bff;
+  --button-bg-color-hover: #0069d9;
+  --white: #fff;
+  --grey: #333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+
+  .container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+  }
+
+  header {
+    background-color: var(--grey);
+    color: var(--white);
+    padding: 1rem;
+    text-align: center;
+  }
+
+  main {
+    padding: 2rem;
+    text-align: center;
+  }
+ /* Blend mode for the footer background */
+  footer {
+    background-color: var(--grey);
+    color: var(--white);
+    padding: 1rem;
+    text-align: center;
+    mix-blend-mode: normal
+  }
+/* Implementation of CSS variable */
+  .button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--button-bg-color);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .button:hover {
+    background-color: var(--button-bg-color-hover);
+  }
+/* Keyframe animation */
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .animated-content {
+    animation: slideIn 1s forwards;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
